@@ -1,11 +1,11 @@
 const { ethers } = require("hardhat");
 
-const main = () => {
-  const Todo = await ethers.getContractFactory('Todo');
+const main = async () => {
+  const Todo = await ethers.getContractFactory("Todo");
   const todo = await Todo.deploy();
   await todo.deployed();
   console.log(`Contract deployed to: ${todo.address}`);
-}
+};
 
 main()
   .then(() => process.exit(0))
